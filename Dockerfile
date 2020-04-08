@@ -3,7 +3,7 @@ FROM centos:7
 RUN mkdir /out
 
 # helmfile
-ENV HELMFILE_VERSION 0.98.2     
+ENV HELMFILE_VERSION 0.108.0
 RUN curl -LO https://github.com/roboll/helmfile/releases/download/v${HELMFILE_VERSION}/helmfile_linux_amd64 && \
   mv helmfile_linux_amd64 /out/helmfile && \
   chmod +x /out/helmfile
@@ -17,10 +17,7 @@ RUN curl -LO  https://storage.googleapis.com/kubernetes-release/release/v${KUBEC
 # helm 3
 ENV HELM3_VERSION 3.1.2
 RUN curl -f -L https://get.helm.sh/helm-v${HELM3_VERSION}-linux-386.tar.gz | tar xzv && \
-  mv linux-386/helm /usr/local/bin/helm && \
-  mkdir -p $HOME/.jx/plugins/bin && \
-  ln -s /usr/local/bin/helm $HOME/.jx/plugins/bin/helm-${HELM3_VERSION}
-
+  mv linux-386/helm /out/
 
 # git
 ENV GIT_VERSION 2.21.1
@@ -78,7 +75,8 @@ ENV PATH /usr/local/bin:/usr/local/git/bin:$PATH:/usr/local/gcloud/google-cloud-
 ENV HELM_PLUGINS /root/.cache/helm/plugins/
 ENV JX_HELM3 "true"
 
-RUN helm plugin install https://github.com/databus23/helm-diff && \
+ENV DIFF_VERSION 3.1.1
+RUN helm plugin install https://github.com/databus23/helm-diff --version ${DIFF_VERSION} && \
     helm plugin install https://github.com/aslafy-z/helm-git.git
 
 # hack copying in a custom built bdd-jx and a custom jx from this PR as needed but not merged yet https://github.com/jenkins-x/jx/pull/6664
