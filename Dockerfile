@@ -55,9 +55,9 @@ RUN git clone https://github.com/jenkins-x/bdd-jx.git && \
   make testbin && \
   mv build/bddjx /out/bddjx
 
-RUN git clone https://github.com/jenkins-x/jx.git && \
+RUN git clone https://github.com/nxmatic/jxlabs-nos-jx.git && \
   cd jx && \
-  git checkout multicluster && \
+  git checkout jxlabs-nos && \
   make linux && \
   mv build/linux/jx /out/jx
 
