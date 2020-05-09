@@ -17,10 +17,7 @@ RUN curl -LO  https://storage.googleapis.com/kubernetes-release/release/v${KUBEC
 # helm 3
 ENV HELM3_VERSION 3.2.0
 RUN curl -f -L https://get.helm.sh/helm-v${HELM3_VERSION}-linux-386.tar.gz | tar xzv && \
-  mv linux-386/helm /usr/local/bin/helm && \
-  mkdir -p $HOME/.jx/plugins/bin && \
-  ln -s /usr/local/bin/helm $HOME/.jx/plugins/bin/helm-${HELM3_VERSION}
-
+  mv linux-386/helm /out/helm
 
 # git
 ENV GIT_VERSION 2.21.1
@@ -82,7 +79,10 @@ ENV DIFF_VERSION 3.1.1
 ENV GCS_VERSION 0.2.0
 RUN /usr/local/bin/helm plugin install https://github.com/databus23/helm-diff --version ${DIFF_VERSION} && \
     /usr/local/bin/helm plugin install https://github.com/aslafy-z/helm-git.git && \
-    /usr/local/bin/helm plugin install https://github.com/viglesiasce/helm-gcs.git --version v$(GCS_VERSION)
+    /usr/local/bin/helm plugin install https://github.com/viglesiasce/helm-gcs.git --version v${GCS_VERSION}
+
+RUN mkdir -p /root/.jx/plugins/bin && \
+    ln -s /usr/local/bin/helm $HOME/.jx/plugins/bin/helm-${HELM3_VERSION}
 
 # hack copying in a custom built bdd-jx and a custom jx from this PR as needed but not merged yet https://github.com/jenkins-x/jx/pull/6664
 # COPY build/jx /usr/local/bin/jx

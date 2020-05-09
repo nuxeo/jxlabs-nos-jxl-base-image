@@ -3,7 +3,7 @@ kind: Config
 build:
   tagPolicy:
     envTemplate:
-      template: "gcr.io/build-jx-prod/jxlabs-nos/{{.IMAGE_NAME}}:{{.VERSION}}"
+      template: "gcr.io/build-jx-prod/jxlabs-nos-nxmatic/{{.IMAGE_NAME}}:{{.VERSION}}"
   artifacts:
     - image: jxl-base
       context: .
@@ -11,8 +11,13 @@ build:
         dockerfile: Dockerfile
         buildContext:
           localDir: {}
-        cache:
-          repo: gcr.io/build-jx-prod/jxlabs-nos-nxmatic/cache
   cluster:
     namespace: jx
     pullSecretName: kaniko-secret
+    resources:
+      requests:
+        cpu: 4
+        memory: 6Gi
+      limits:
+        cpu: 6
+        memory: 8Gi
