@@ -55,7 +55,7 @@ RUN git clone https://github.com/jenkins-x/bdd-jx.git && \
   make testbin && \
   mv build/bddjx /out/bddjx
 
-RUN git clone https://github.com/nxmatic/jxlabs-nos-jx.git && \
+RUN git clone https://github.com/nxmatic/jxlabs-nos-jx.git jx && \
   cd jx && \
   git checkout jxlabs-nos && \
   make linux && \
@@ -80,9 +80,9 @@ ENV JX_HELM3 "true"
 
 ENV DIFF_VERSION 3.1.1
 ENV GCS_VERSION 0.2.0
-RUN helm plugin install https://github.com/databus23/helm-diff --version ${DIFF_VERSION} && \
-    helm plugin install https://github.com/aslafy-z/helm-git.git && \
-    helm plugin install https://github.com/viglesiasce/helm-gcs.git --version v$(GCS_VERSION)
+RUN /usr/local/bin/helm plugin install https://github.com/databus23/helm-diff --version ${DIFF_VERSION} && \
+    /usr/local/bin/helm plugin install https://github.com/aslafy-z/helm-git.git && \
+    /usr/local/bin/helm plugin install https://github.com/viglesiasce/helm-gcs.git --version v$(GCS_VERSION)
 
 # hack copying in a custom built bdd-jx and a custom jx from this PR as needed but not merged yet https://github.com/jenkins-x/jx/pull/6664
 # COPY build/jx /usr/local/bin/jx

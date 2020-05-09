@@ -11,6 +11,8 @@ build:
         dockerfile: Dockerfile
         buildContext:
           localDir: {}
+        cache:
+          repo: gcr.io/build-jx-prod/jxlabs-nos-nxmatic/cache
   cluster:
     namespace: jx
     pullSecretName: kaniko-secret
