@@ -3,18 +3,14 @@ kind: Config
 build:
   tagPolicy:
     envTemplate:
-      template: "localhost:5000/nuxeo/nos/jenkins-x/{{.IMAGE_NAME}}:0.0.0-fix-jenkins-location-latest"
+      template: "gcr.io/build-jx-prod/jxlabs-nos/{{.IMAGE_NAME}}:{{.VERSION}}"
   artifacts:
-    - image: jenkins
+    - image: jxl-base
       context: .
       kaniko:
         dockerfile: Dockerfile
-        buildArgs:
-          VERSION: 0.0.0-fix-jenkins-location-latest
-          SCM_REF: dea3b40 (HEAD -> fix-jenkins-location, origin/fix-jenkins-location)
         buildContext:
           localDir: {}
-        cache:
-          repo: localhost:5000/nuxeo/nos/jenkins-x/cache
   cluster:
-    namespace: nos
+    namespace: jx
+    pullSecretName: kaniko-secret
