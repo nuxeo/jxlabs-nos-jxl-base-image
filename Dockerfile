@@ -40,6 +40,14 @@ RUN mkdir -p /usr/local/gcloud \
   /usr/local/gcloud/google-cloud-sdk/bin/gcloud components install beta && \
   /usr/local/gcloud/google-cloud-sdk/bin/gcloud components update
 
+# add additional CLIs
+
+ARG PULUMI_VERSION=2.1.0
+RUN curl --silent --location --output /dev/stdout \
+         https://get.pulumi.com/releases/sdk/pulumi-v${PULUMI_VERSION}-linux-x64.tar.gz | \
+    tar --extract --file=/dev/stdin --directory=/usr/local/bin \
+        --strip-components=1 --gunzip pulumi
+
 FROM golang:1.12.17
 
 RUN mkdir /out
@@ -58,9 +66,6 @@ RUN git clone https://github.com/nxmatic/jxlabs-nos-jx.git jx && \
   make linux && \
   mv build/linux/jx /out/jx
 
-# Adding the package path to local
-ENV PATH $PATH:/usr/local/gcloud/google-cloud-sdk/bin
-
 # use a multi stage image so we don't include all the build tools above
 FROM centos:7
 # need to copy the whole git source else it doesn't clone the helm plugin repos below
@@ -69,6 +74,11 @@ COPY --from=0 /usr/bin/make /usr/bin/make
 COPY --from=0 /out /usr/local/bin
 COPY --from=1 /out /usr/local/bin
 COPY --from=0 /usr/local/gcloud /usr/local/gcloud
+
+ENV NODEJS_VERSION=12
+RUN curl -f --silent --location https://rpm.nodesource.com/setup_${NODEJS_VERSION}.x | bash - && \
+  yum install -y nodejs && yum clean all && \
+  npm install -g pnpm
 
 ENV PATH /usr/local/bin:/usr/local/git/bin:$PATH:/usr/local/gcloud/google-cloud-sdk/bin
 
