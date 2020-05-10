@@ -48,6 +48,11 @@ RUN curl --silent --location --output /dev/stdout \
     tar --extract --file=/dev/stdin --directory=/out \
         --strip-components=1 --gunzip pulumi
 
+ARG YQ_VERSION=3.3.0
+RUN curl --silent --location --output /out/yq \
+         https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_amd64 && \
+    chmod +x /out/yq
+
 FROM golang:1.12.17
 
 RUN mkdir /out
