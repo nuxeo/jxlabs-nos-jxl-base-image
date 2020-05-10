@@ -45,7 +45,7 @@ RUN mkdir -p /usr/local/gcloud \
 ARG PULUMI_VERSION=2.1.0
 RUN curl --silent --location --output /dev/stdout \
          https://get.pulumi.com/releases/sdk/pulumi-v${PULUMI_VERSION}-linux-x64.tar.gz | \
-    tar --extract --file=/dev/stdin --directory=/usr/local/bin \
+    tar --extract --file=/dev/stdin --directory=/out \
         --strip-components=1 --gunzip pulumi
 
 FROM golang:1.12.17
