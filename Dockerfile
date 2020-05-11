@@ -48,6 +48,12 @@ RUN curl --silent --location --output /dev/stdout \
     tar --extract --file=/dev/stdin --directory=/out \
         --strip-components=1 --gunzip pulumi
 
+
+ARG JQ_VERSION=1.6
+RUN curl --silent --location --output /out/jq \
+         https://github.com/stedolan/jq/releases/download/jq-${JQ_VERSION}/jq-linux64 && \
+    chmod +x /out/jq
+
 ARG YQ_VERSION=3.3.0
 RUN curl --silent --location --output /out/yq \
          https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_amd64 && \
