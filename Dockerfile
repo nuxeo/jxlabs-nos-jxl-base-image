@@ -48,6 +48,11 @@ RUN curl --silent --location --output /dev/stdout \
     tar --extract --file=/dev/stdin --directory=/out \
         --strip-components=1 --gunzip pulumi
 
+ARG HUB_VERSION=2.14.2
+RUN curl --silent --location --output /dev/stdout \
+    	 https://github.com/github/hub/releases/download/v${HUB_VERSION}/hub-linux-amd64-${HUB_VERSION}.tgz | \
+    tar --extract --file=/dev/stdin --directory=/out \
+        --strip-components=2 --gunzip hub-linux-amd64-${HUB_VERSION}/bin/hub
 
 ARG JQ_VERSION=1.6
 RUN curl --silent --location --output /out/jq \
