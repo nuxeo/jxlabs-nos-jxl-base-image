@@ -1,0 +1,29 @@
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-sf2cd-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-fhwnv[0m
+{"level":"info","ts":1589888240.640782,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1589888240.6413546,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-sf2cd-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-ss27s[0m
+{"level":"info","ts":1589888241.2727945,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1589888241.2759583,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-sf2cd-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-sf2cd-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-nuxeo-jxlabs-nos-jxl-base-image-sf2cd-cp2ck[0m
+{"level":"info","ts":1589888247.4739842,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1589888247.8048363,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/nuxeo/**labs-nos-**l-base-image.git @ v0.1.42 in path /workspace/source"}
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-sf2cd-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:7be7acac2b132102b23ae7beaf5037096ffd2b2c
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-sf2cd-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-sf2cd-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+enabling GCP Service Account from /secrets/gcr/credentials.json
+ERROR: (gcloud.auth.activate-service-account) Unable to read file [/secrets/gcr/credentials.json]: [Errno 2] No such file or directory: '/secrets/gcr/credentials.json'
+building container image version: 0.1.42
+ERROR: (gcloud.builds.submit) User [129163454118-compute@developer.gserviceaccount.com] does not have permission to access b [jenkinsxio-labs_cloudbuild] (or it may not exist): 129163454118-compute@developer.gserviceaccount.com does not have storage.buckets.get access to the Google Cloud Storage bucket.
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-container-build'. The execution of the pipeline has stopped.[0m
