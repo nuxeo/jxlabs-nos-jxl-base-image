@@ -1,0 +1,35 @@
+
+Showing logs for build [32mmeta-nuxeo-jxlabs-nos-jxl-base-ql8ff-6[0m stage [32mmeta-pipeline[0m and container [32mstep-credential-initializer-cd5h5[0m
+{"level":"info","ts":1590848395.105528,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1590848395.1077504,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mmeta-nuxeo-jxlabs-nos-jxl-base-ql8ff-6[0m stage [32mmeta-pipeline[0m and container [32mstep-working-dir-initializer-4fg26[0m
+{"level":"info","ts":1590848395.53266,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1590848395.5342045,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mmeta-nuxeo-jxlabs-nos-jxl-base-ql8ff-6[0m stage [32mmeta-pipeline[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mmeta-nuxeo-jxlabs-nos-jxl-base-ql8ff-6[0m stage [32mmeta-pipeline[0m and container [32mstep-git-source-meta-nuxeo-jxlabs-nos-jxl-base-ql8ff-q6swq[0m
+{"level":"info","ts":1590848401.6278014,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1590848402.0385387,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/nuxeo/**labs-nos-**l-base-image.git @ 3dd18925a429e970eec4027384c0eb8e4de81e92 in path /workspace/source"}
+
+Showing logs for build [32mmeta-nuxeo-jxlabs-nos-jxl-base-ql8ff-6[0m stage [32mmeta-pipeline[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:3dd18925a429e970eec4027384c0eb8e4de81e92
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mmeta-nuxeo-jxlabs-nos-jxl-base-ql8ff-6[0m stage [32mmeta-pipeline[0m and container [32mstep-merge-pull-refs[0m
+SKIP merge-pull-refs: Nothing to merge
+
+Showing logs for build [32mmeta-nuxeo-jxlabs-nos-jxl-base-ql8ff-6[0m stage [32mmeta-pipeline[0m and container [32mstep-create-effective-pipeline[0m
+Cloning the Jenkins X versions repo https://github.com/nuxeo/**labs-nos-versions.git with ref refs/heads/master to /builder/home/.**/jenkins-x-versions
+Effective pipeline written to jenkins-x-release-effective.yml
+
+Showing logs for build [32mmeta-nuxeo-jxlabs-nos-jxl-base-ql8ff-6[0m stage [32mmeta-pipeline[0m and container [32mstep-create-tekton-crds[0m
+running command: next-version.sh
+created new version: 0.1.52 and written to file: ./VERSION
+To https://github.com/nuxeo/**labs-nos-**l-base-image.git
+ ! [remote rejected] v0.1.52-**labs-nos -> v0.1.52-**labs-nos (cannot lock ref 'refs/tags/v0.1.52-**labs-nos': reference already exists)
+error: failed to push some refs to 'https://github.com/nuxeo/**labs-nos-**l-base-image.git'
+error: failed to set the version on release pipelines: failed to run '/bin/sh -c next-version.sh' command in directory '/workspace/source', output: ''
+[31m
+Pipeline failed on stage 'meta-pipeline' : container 'step-create-tekton-crds'. The execution of the pipeline has stopped.[0m
