@@ -1,30 +1,28 @@
 
-Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-g5q6z-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-j5pdg[0m
-{"level":"info","ts":1590272861.2856224,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
-{"level":"info","ts":1590272861.2885237,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-tlx6g-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-b2pvg[0m
+{"level":"info","ts":1590847653.983863,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1590847653.9843307,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
 
-Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-g5q6z-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-xfd8t[0m
-{"level":"info","ts":1590272862.308983,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
-{"level":"info","ts":1590272862.3105206,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-tlx6g-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-rrxt6[0m
+{"level":"info","ts":1590847655.0585103,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1590847655.0599785,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
 
-Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-g5q6z-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-tlx6g-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
 
-Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-g5q6z-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-nuxeo-jxlabs-nos-jxl-base-image-g5q6z-ddc9r[0m
-{"level":"info","ts":1590272868.5097075,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
-{"level":"info","ts":1590272868.8234303,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/nuxeo/**labs-nos-**l-base-image.git @ v0.1.46-**labs-nos in path /workspace/source"}
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-tlx6g-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-nuxeo-jxlabs-nos-jxl-base-image-tlx6g-vdqdw[0m
+{"level":"info","ts":1590847680.1798618,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1590847680.500364,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/nuxeo/**labs-nos-**l-base-image.git @ v0.1.51-**labs-nos in path /workspace/source"}
 
-Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-g5q6z-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
-Using SHAs from PULL_REFS=master:80bbdad4693b31bfbf67f7b510503d9f53752a4d
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-tlx6g-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:6481346afc44d04b78ff08192e14bc28df4ea9f3
 WARNING: no SHAs to merge, falling back to initial cloned commit
 
-Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-g5q6z-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-tlx6g-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
 Generated Git credentials file /workspace/xdg_config/git/credentials
 
-Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-g5q6z-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
-E0523 22:27:52.882752      10 aws_credentials.go:77] while getting AWS credentials NoCredentialProviders: no valid providers in chain. Deprecated.
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-tlx6g-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+E0530 14:08:04.302743      10 aws_credentials.go:77] while getting AWS credentials NoCredentialProviders: no valid providers in chain. Deprecated.
 	For verbose messaging see aws.Config.CredentialsChainVerboseErrors
-E0523 22:27:52.892691      10 metadata.go:154] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
-E0523 22:27:52.895714      10 metadata.go:166] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
-error checking push permissions -- make sure you entered the correct tag name, and that you are authenticated correctly, and try again: checking push permission for "gcr.io/build-**-prod/**labs-nos-master/build-**-prod/**labs-nos-**l-base-image:0.1.46-**labs-nos": creating push check transport for gcr.io failed: GET https://gcr.io/v2/token?scope=repository%3Abuild-**-prod%2F**labs-nos-master%2Fbuild-**-prod%2F**labs-nos-**l-base-image%3Apush%2Cpull&service=gcr.io: UNKNOWN: Missing "client_email" in json key.
+error checking push permissions -- make sure you entered the correct tag name, and that you are authenticated correctly, and try again: checking push permission for "gcr.io/**labs-nos-helm-x/build-**-prod/**labs-nos-**l-base-image:0.1.51-**labs-nos": creating push check transport for gcr.io failed: GET https://gcr.io/v2/token?scope=repository%3A**labs-nos-helm-x%2Fbuild-**-prod%2F**labs-nos-**l-base-image%3Apush%2Cpull&service=gcr.io: UNKNOWN: Project 'project:**labs-nos-helm-x' not found or deleted.
 [31m
 Pipeline failed on stage 'from-build-pack' : container 'step-build-container-build'. The execution of the pipeline has stopped.[0m
