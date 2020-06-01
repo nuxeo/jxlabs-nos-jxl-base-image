@@ -1,0 +1,25 @@
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-qmghj-21[0m stage [32mrelease[0m and container [32mstep-credential-initializer-txnqx[0m
+{"level":"info","ts":1591014074.0587473,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1591014074.059322,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-qmghj-21[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-4dh68[0m
+{"level":"info","ts":1591014078.5549123,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1591014078.5560277,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-qmghj-21[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-qmghj-21[0m stage [32mrelease[0m and container [32mstep-git-source-nuxeo-jxlabs-nos-jxl-base-image-qmghj-sglkm[0m
+{"level":"info","ts":1591014088.9993062,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1591014089.308059,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/nuxeo/**labs-nos-**l-base-image.git @ v0.1.70-**labs-nos in path /workspace/source"}
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-qmghj-21[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:fd0e80b43bdc8003917074b58594eee102214a35
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-qmghj-21[0m stage [32mrelease[0m and container [32mstep-build-and-push-image[0m
+E0601 12:21:32.301520      10 aws_credentials.go:77] while getting AWS credentials NoCredentialProviders: no valid providers in chain. Deprecated.
+	For verbose messaging see aws.Config.CredentialsChainVerboseErrors
+error building image: parsing dockerfile: Dockerfile parse error line 77: unknown instruction: MAKE
+[31m
+Pipeline failed on stage 'release' : container 'step-build-and-push-image'. The execution of the pipeline has stopped.[0m
