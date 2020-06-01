@@ -1,0 +1,28 @@
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-xjm5d-9[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-lf9gs[0m
+{"level":"info","ts":1590996667.6097996,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1590996667.6123145,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-xjm5d-9[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-qqgv6[0m
+{"level":"info","ts":1590996668.1039212,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1590996668.1062653,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-xjm5d-9[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-xjm5d-9[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-nuxeo-jxlabs-nos-jxl-base-image-xjm5d-nsqrk[0m
+{"level":"info","ts":1590996673.2798295,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1590996673.5858307,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/nuxeo/**labs-nos-**l-base-image.git @ v0.1.59-**labs-nos in path /workspace/source"}
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-xjm5d-9[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:4a8c5c238224059afc53b8c7319494b474c580f5
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-xjm5d-9[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-xjm5d-9[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+E0601 07:31:16.542618      10 aws_credentials.go:77] while getting AWS credentials NoCredentialProviders: no valid providers in chain. Deprecated.
+	For verbose messaging see aws.Config.CredentialsChainVerboseErrors
+error checking push permissions -- make sure you entered the correct tag name, and that you are authenticated correctly, and try again: checking push permission for "gcr.io/build-**-prod/**labs-nos-helm-x/**labs-nos/**labs-nos-**l-base-image:0.1.59-**labs-nos": creating push check transport for gcr.io failed: GET https://gcr.io/v2/token?scope=repository%3Abuild-**-prod%2F**labs-nos-helm-x%2F**labs-nos%2F**labs-nos-**l-base-image%3Apush%2Cpull&service=gcr.io: DENIED: Token exchange failed for project 'build-**-prod'. Caller does not have permission 'storage.buckets.get'. To configure permissions, follow instructions at: https://cloud.google.com/container-registry/docs/access-control
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-container-build'. The execution of the pipeline has stopped.[0m
