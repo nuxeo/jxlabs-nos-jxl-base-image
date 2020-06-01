@@ -1,0 +1,26 @@
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-pn28d-17[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-fpjv6[0m
+{"level":"info","ts":1591010987.8159451,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1591010987.8165429,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-pn28d-17[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-6t95p[0m
+{"level":"info","ts":1591010991.2664285,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1591010991.267735,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-pn28d-17[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-pn28d-17[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-nuxeo-jxlabs-nos-jxl-base-image-pn28d-msdlw[0m
+{"level":"info","ts":1591011016.2058086,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1591011016.5679312,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/nuxeo/**labs-nos-**l-base-image.git @ v0.1.67-**labs-nos in path /workspace/source"}
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-pn28d-17[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:301a37f225978782293dae50f69bc17d9618b3b5
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-pn28d-17[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-pn28d-17[0m stage [32mfrom-build-pack[0m and container [32mstep-build-step3[0m
+cat: /kaniko-secret/secret.json: No such file or directory
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-step3'. The execution of the pipeline has stopped.[0m
