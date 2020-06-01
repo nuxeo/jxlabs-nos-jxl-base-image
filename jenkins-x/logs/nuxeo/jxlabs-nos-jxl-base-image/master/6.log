@@ -1,35 +1,28 @@
 
-Showing logs for build [32mmeta-nuxeo-jxlabs-nos-jxl-base-ql8ff-6[0m stage [32mmeta-pipeline[0m and container [32mstep-credential-initializer-cd5h5[0m
-{"level":"info","ts":1590848395.105528,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
-{"level":"info","ts":1590848395.1077504,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-8sc95-6[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-4j4cq[0m
+{"level":"info","ts":1590995459.8933737,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1590995459.895996,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
 
-Showing logs for build [32mmeta-nuxeo-jxlabs-nos-jxl-base-ql8ff-6[0m stage [32mmeta-pipeline[0m and container [32mstep-working-dir-initializer-4fg26[0m
-{"level":"info","ts":1590848395.53266,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
-{"level":"info","ts":1590848395.5342045,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-8sc95-6[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-tbfhz[0m
+{"level":"info","ts":1590995460.2961786,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1590995460.2984056,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
 
-Showing logs for build [32mmeta-nuxeo-jxlabs-nos-jxl-base-ql8ff-6[0m stage [32mmeta-pipeline[0m and container [32mstep-place-tools[0m
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-8sc95-6[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
 
-Showing logs for build [32mmeta-nuxeo-jxlabs-nos-jxl-base-ql8ff-6[0m stage [32mmeta-pipeline[0m and container [32mstep-git-source-meta-nuxeo-jxlabs-nos-jxl-base-ql8ff-q6swq[0m
-{"level":"info","ts":1590848401.6278014,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
-{"level":"info","ts":1590848402.0385387,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/nuxeo/**labs-nos-**l-base-image.git @ 3dd18925a429e970eec4027384c0eb8e4de81e92 in path /workspace/source"}
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-8sc95-6[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-nuxeo-jxlabs-nos-jxl-base-image-8sc95-mhtgm[0m
+{"level":"info","ts":1590995466.3944547,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1590995466.7224555,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/nuxeo/**labs-nos-**l-base-image.git @ v0.1.56-**labs-nos in path /workspace/source"}
 
-Showing logs for build [32mmeta-nuxeo-jxlabs-nos-jxl-base-ql8ff-6[0m stage [32mmeta-pipeline[0m and container [32mstep-git-merge[0m
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-8sc95-6[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
 Using SHAs from PULL_REFS=master:3dd18925a429e970eec4027384c0eb8e4de81e92
 WARNING: no SHAs to merge, falling back to initial cloned commit
 
-Showing logs for build [32mmeta-nuxeo-jxlabs-nos-jxl-base-ql8ff-6[0m stage [32mmeta-pipeline[0m and container [32mstep-merge-pull-refs[0m
-SKIP merge-pull-refs: Nothing to merge
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-8sc95-6[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
 
-Showing logs for build [32mmeta-nuxeo-jxlabs-nos-jxl-base-ql8ff-6[0m stage [32mmeta-pipeline[0m and container [32mstep-create-effective-pipeline[0m
-Cloning the Jenkins X versions repo https://github.com/nuxeo/**labs-nos-versions.git with ref refs/heads/master to /builder/home/.**/jenkins-x-versions
-Effective pipeline written to jenkins-x-release-effective.yml
-
-Showing logs for build [32mmeta-nuxeo-jxlabs-nos-jxl-base-ql8ff-6[0m stage [32mmeta-pipeline[0m and container [32mstep-create-tekton-crds[0m
-running command: next-version.sh
-created new version: 0.1.52 and written to file: ./VERSION
-To https://github.com/nuxeo/**labs-nos-**l-base-image.git
- ! [remote rejected] v0.1.52-**labs-nos -> v0.1.52-**labs-nos (cannot lock ref 'refs/tags/v0.1.52-**labs-nos': reference already exists)
-error: failed to push some refs to 'https://github.com/nuxeo/**labs-nos-**l-base-image.git'
-error: failed to set the version on release pipelines: failed to run '/bin/sh -c next-version.sh' command in directory '/workspace/source', output: ''
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-8sc95-6[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+E0601 07:11:09.609717      10 aws_credentials.go:77] while getting AWS credentials NoCredentialProviders: no valid providers in chain. Deprecated.
+	For verbose messaging see aws.Config.CredentialsChainVerboseErrors
+error checking push permissions -- make sure you entered the correct tag name, and that you are authenticated correctly, and try again: checking push permission for "gcr.io/build-**-prod/**labs-nos-helm-x/build-**-prod/**labs-nos-**l-base-image:0.1.56-**labs-nos": creating push check transport for gcr.io failed: GET https://gcr.io/v2/token?scope=repository%3Abuild-**-prod%2F**labs-nos-helm-x%2Fbuild-**-prod%2F**labs-nos-**l-base-image%3Apush%2Cpull&service=gcr.io: DENIED: Token exchange failed for project 'build-**-prod'. Caller does not have permission 'storage.buckets.get'. To configure permissions, follow instructions at: https://cloud.google.com/container-registry/docs/access-control
 [31m
-Pipeline failed on stage 'meta-pipeline' : container 'step-create-tekton-crds'. The execution of the pipeline has stopped.[0m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-container-build'. The execution of the pipeline has stopped.[0m
