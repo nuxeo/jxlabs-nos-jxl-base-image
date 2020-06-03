@@ -91,7 +91,6 @@ RUN curl -f --silent --location https://rpm.nodesource.com/setup_${NODEJS_VERSIO
 
 ENV PATH /usr/local/bin:/usr/local/git/bin:$PATH:/usr/local/gcloud/google-cloud-sdk/bin
 
-ENV HELM_PLUGINS /root/.cache/helm/plugins/
 ENV JX_HELM3 "true"
 
 ENV HELM_DIFF_VERSION 3.1.1
@@ -104,6 +103,4 @@ RUN yum install -y wget && yum clean all && \
     /usr/local/bin/helm plugin install https://github.com/hayorov/helm-gcs --version v${HELM_GCS_VERSION} && \
     /usr/local/bin/helm plugin install https://github.com/mumoshu/helm-x --version v${HELM_X_VERSION}
 
-RUN mkdir -p /root/.jx/plugins/bin && \
-    ln -s /usr/local/bin/helm $HOME/.jx/plugins/bin/helm-${HELM3_VERSION}
 
