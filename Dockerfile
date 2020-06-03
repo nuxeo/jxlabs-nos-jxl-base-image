@@ -43,24 +43,24 @@ RUN mkdir -p /usr/local/gcloud \
 
 # add additional CLIs
 
-ARG PULUMI_VERSION=2.3.0
+ENV PULUMI_VERSION 2.3.0
 RUN curl --silent --location --output /dev/stdout \
          https://get.pulumi.com/releases/sdk/pulumi-v${PULUMI_VERSION}-linux-x64.tar.gz | \
     tar --extract --file=/dev/stdin --directory=/out \
         --strip-components=1 --gunzip pulumi
 
-ARG HUB_VERSION=2.14.2
+ENV HUB_VERSION 2.14.2
 RUN curl --silent --location --output /dev/stdout \
     	 https://github.com/github/hub/releases/download/v${HUB_VERSION}/hub-linux-amd64-${HUB_VERSION}.tgz | \
     tar --extract --file=/dev/stdin --directory=/out \
         --strip-components=2 --gunzip hub-linux-amd64-${HUB_VERSION}/bin/hub
 
-ARG JQ_VERSION=1.6
+ENV JQ_VERSION 1.6
 RUN curl --silent --location --output /out/jq \
          https://github.com/stedolan/jq/releases/download/jq-${JQ_VERSION}/jq-linux64 && \
     chmod +x /out/jq
 
-ARG YQ_VERSION=3.3.0
+ENV YQ_VERSION 3.3.0
 RUN curl --silent --location --output /out/yq \
          https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_amd64 && \
     chmod +x /out/yq
@@ -72,7 +72,7 @@ RUN curl --silent -f -L https://github.com/kubernetes-sigs/kustomize/releases/do
   chmod +x /out/kustomize
 
 # jenkins-x
-ENV JX_VERSION 2.1.40-jxlabs-nos-1
+ENV JX_VERSION 2.1.56-jxlabs-nos-1
 RUN curl --silent -f -L https://github.com/nuxeo/jxlabs-nos-jx/releases/download/v${JX_VERSION}/jxlabs-nos-jx-linux-amd64.tar.gz | tar xvfCz - /out jx && \
   chmod +x /out/jx
 
@@ -84,7 +84,7 @@ COPY --from=0 /usr/bin/make /usr/bin/make
 COPY --from=0 /out /usr/local/bin
 COPY --from=0 /usr/local/gcloud /usr/local/gcloud
 
-ENV NODEJS_VERSION=12
+ENV NODEJS_VERSION 12
 RUN curl -f --silent --location https://rpm.nodesource.com/setup_${NODEJS_VERSION}.x | bash - && \
   yum install -y nodejs && yum clean all && \
   npm install -g pnpm
