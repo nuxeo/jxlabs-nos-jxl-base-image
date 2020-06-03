@@ -1,0 +1,23 @@
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-hgc5r-27[0m stage [32mrelease[0m and container [32mstep-credential-initializer-8bgjs[0m
+{"level":"info","ts":1591180311.7597327,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1591180311.7602549,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-hgc5r-27[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-bd7qr[0m
+{"level":"info","ts":1591180312.757063,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1591180312.7582123,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-hgc5r-27[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-hgc5r-27[0m stage [32mrelease[0m and container [32mstep-git-source-nuxeo-jxlabs-nos-jxl-base-image-hgc5r-dc9b2[0m
+{"level":"info","ts":1591180318.0582712,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1591180318.354641,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/nuxeo/**labs-nos-**l-base-image.git @ v0.1.41-**labs-nos-1 in path /workspace/source"}
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-hgc5r-27[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:672ec47d98d1ccd5e034c8c7d480dae08de4714c
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-hgc5r-27[0m stage [32mrelease[0m and container [32mstep-build-and-push-image[0m
+failed to try resolving symlinks in path "/var/log/pods/**_nuxeo-**labs-nos-**l-base-image-hgc5r-27-release-kdbr4-pod-19481a_dddcb44e-6b71-445a-afb7-897171d7a8fb/step-build-and-push-image/0.log": lstat /var/log/pods/**_nuxeo-**labs-nos-**l-base-image-hgc5r-27-release-kdbr4-pod-19481a_dddcb44e-6b71-445a-afb7-897171d7a8fb/step-build-and-push-image/0.log: no such file or directory
+[31m
+Pipeline failed on stage 'release' : container 'step-build-and-push-image'. The execution of the pipeline has stopped.[0m
