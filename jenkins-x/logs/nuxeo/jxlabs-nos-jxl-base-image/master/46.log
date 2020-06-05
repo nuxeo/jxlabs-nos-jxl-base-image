@@ -1,0 +1,31 @@
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-jl8g5-46[0m stage [32mrelease[0m and container [32mstep-credential-initializer-t7cj8[0m
+{"level":"info","ts":1591366593.8033922,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1591366593.8040318,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-jl8g5-46[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-pn97l[0m
+{"level":"info","ts":1591366594.9001927,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1591366594.902973,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-jl8g5-46[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-jl8g5-46[0m stage [32mrelease[0m and container [32mstep-git-source-nuxeo-jxlabs-nos-jxl-base-image-jl8g5-gt66g[0m
+{"level":"info","ts":1591366600.3073082,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1591366600.5950093,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/nuxeo/**labs-nos-**l-base-image.git @ v0.1.41-**labs-nos-5 in path /workspace/source"}
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-jl8g5-46[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:be1d81c7c9dff2264332e8dffd0da0263bc5635c
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-jl8g5-46[0m stage [32mrelease[0m and container [32mstep-build-and-push-image[0m
+E0605 14:16:42.556049      10 aws_credentials.go:77] while getting AWS credentials NoCredentialProviders: no valid providers in chain. Deprecated.
+	For verbose messaging see aws.Config.CredentialsChainVerboseErrors
+[36mINFO[0m[0000] Retrieving image manifest centos:7           
+E0605 14:16:42.783568      10 metadata.go:154] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+E0605 14:16:42.786530      10 metadata.go:166] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+[36mINFO[0m[0001] Retrieving image manifest centos:7           
+[36mINFO[0m[0001] Retrieving image manifest centos:7           
+[36mINFO[0m[0002] Retrieving image manifest centos:7           
+error building image: failed to process "\"true": unexpected end of statement while looking for matching double-quote
+[31m
+Pipeline failed on stage 'release' : container 'step-build-and-push-image'. The execution of the pipeline has stopped.[0m
