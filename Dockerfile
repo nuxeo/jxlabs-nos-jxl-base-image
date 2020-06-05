@@ -71,11 +71,6 @@ RUN curl --silent -f -L https://github.com/kubernetes-sigs/kustomize/releases/do
   mv kustomize /out && \
   chmod +x /out/kustomize
 
-# jenkins-x
-ENV JX_VERSION 2.1.56-jxlabs-nos-1
-RUN curl --silent -f -L https://github.com/nuxeo/jxlabs-nos-jx/releases/download/v${JX_VERSION}/jxlabs-nos-jx-linux-amd64.tar.gz | tar xvfCz - /out jx && \
-  chmod +x /out/jx
-
 # use a multi stage image so we don't include all the build tools above
 FROM centos:7
 # need to copy the whole git source else it doesn't clone the helm plugin repos below
