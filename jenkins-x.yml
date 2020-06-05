@@ -4,8 +4,10 @@ pipelineConfig:
     release:
       setVersion:
         steps:
-        - name: next-version
-          command: /workspace/source/next-version.sh
+          - name: next-version
+            command: ./next-version.sh
+          - name: tag-version
+            sh: jx step tag --version=\$(cat VERSION)
       pipeline:
         agent:
           image: gcr.io/kaniko-project/executor:v0.22.0
