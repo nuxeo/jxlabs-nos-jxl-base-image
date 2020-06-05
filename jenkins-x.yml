@@ -10,7 +10,7 @@ pipelineConfig:
             sh: jx step tag --version=\$(cat VERSION)
       pipeline:
         agent:
-          image: gcr.io/kaniko-project/executor:v0.22.0
+          image: gcr.io/kaniko-project/executor
         stages:
           - name: release
             environment:
@@ -52,6 +52,5 @@ pipelineConfig:
                     memory: 3072Mi
             steps:
               - name: build-and-push-image
-                image: gcr.io/kaniko-project/executor:v0.22.0
-                command: /kaniko/executor
-                args: [ '--dockerfile=Dockerfile', '--destination=gcr.io/build-jx-prod/jxlabs-nos/jxl-base:${inputs.params.version}', '--destination=gcr.io/build-jx-prod/jxlabs-nos/jxl-base:latest', '--context=/workspace/source', '--cache-dir=/workspace']
+                image: gcr.io/kaniko-project/executor
+                sh: /kaniko/executor --cache=true --cache-dir=/workspace --context=/workspace/source --dockerfile=/workspace/source/Dockerfile --destination=gcr.io/build-jx-prod/jxlabs-nos/jxl-base:$VERSION --destination=gcr.io/build-jx-prod/jxlabs-nos/jxl-base:latest
