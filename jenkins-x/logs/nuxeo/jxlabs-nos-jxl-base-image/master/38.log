@@ -1,0 +1,71 @@
+
+Showing logs for build [32mmeta-nuxeo-jxlabs-nos-jxl-base-xkvpf-38[0m stage [32mmeta-pipeline[0m and container [32mstep-credential-initializer-hs5p2[0m
+{"level":"info","ts":1591347371.7912164,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1591347371.7916455,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mmeta-nuxeo-jxlabs-nos-jxl-base-xkvpf-38[0m stage [32mmeta-pipeline[0m and container [32mstep-working-dir-initializer-htngm[0m
+{"level":"info","ts":1591347373.385083,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1591347373.3867826,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mmeta-nuxeo-jxlabs-nos-jxl-base-xkvpf-38[0m stage [32mmeta-pipeline[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mmeta-nuxeo-jxlabs-nos-jxl-base-xkvpf-38[0m stage [32mmeta-pipeline[0m and container [32mstep-git-source-meta-nuxeo-jxlabs-nos-jxl-base-xkvpf-zrrss[0m
+{"level":"info","ts":1591347469.6975718,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1591347471.763444,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/nuxeo/**labs-nos-**l-base-image.git @ e47c6289adc57aec2e9b806bb26e630bf3bc33ff in path /workspace/source"}
+
+Showing logs for build [32mmeta-nuxeo-jxlabs-nos-jxl-base-xkvpf-38[0m stage [32mmeta-pipeline[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:e47c6289adc57aec2e9b806bb26e630bf3bc33ff
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mmeta-nuxeo-jxlabs-nos-jxl-base-xkvpf-38[0m stage [32mmeta-pipeline[0m and container [32mstep-merge-pull-refs[0m
+SKIP merge-pull-refs: Nothing to merge
+
+Showing logs for build [32mmeta-nuxeo-jxlabs-nos-jxl-base-xkvpf-38[0m stage [32mmeta-pipeline[0m and container [32mstep-create-effective-pipeline[0m
+Cloning the Jenkins X versions repo https://github.com/nuxeo/**labs-nos-versions.git with ref refs/heads/master to /builder/home/.**/jenkins-x-versions
+Effective pipeline written to jenkins-x-release-effective.yml
+
+Showing logs for build [32mmeta-nuxeo-jxlabs-nos-jxl-base-xkvpf-38[0m stage [32mmeta-pipeline[0m and container [32mstep-create-tekton-crds[0m
+running command: ./next-version.sh
++++ git rev-parse --is-shallow-repository
+++ true
+++ git fetch --unshallow
+From https://github.com/nuxeo/**labs-nos-**l-base-image
+ * [new branch]      gh-pages             -> origin/gh-pages
+ * [new branch]      **labs-nos           -> origin/**labs-nos
+ * [new branch]      master               -> origin/master
+ * [new tag]         t0.1.41-**labs-nos-1 -> t0.1.41-**labs-nos-1
+ * [new tag]         0.1.0                -> 0.1.0
+ * [new tag]         v0.1.41              -> v0.1.41
+ * [new tag]         v0.1.41-**labs-nos-1 -> v0.1.41-**labs-nos-1
+ * [new tag]         v0.1.41-**labs-nos-2 -> v0.1.41-**labs-nos-2
+ * [new tag]         v0.1.41-**labs-nos-3 -> v0.1.41-**labs-nos-3
+++ git fetch origin --tags
+++++ git describe --abbrev=0 '--match=v[0-9]*.[0-9]*.[0-9]*[!-]*'
++++ expr v0.1.41 : 'v\(.*\)'
+++ upstream=0.1.41
++++ git describe --abbrev=0 --tags '--match=t0.1.41-**labs-nos-*'
+++ tag=t0.1.41-**labs-nos-1
+++ '[' 0 -eq 0 ']'
++++ expr t0.1.41-**labs-nos-1 : 't0.1.41-**labs-nos-\(.*\)'
+++ last=1
++++ expr 1 + 1
+++ next=2
+++ version=0.1.41-**labs-nos-2
+++ git tag t0.1.41-**labs-nos-2
+++ git push origin t0.1.41-**labs-nos-2
+To https://github.com/nuxeo/**labs-nos-**l-base-image.git
+ * [new tag]         t0.1.41-**labs-nos-2 -> t0.1.41-**labs-nos-2
+++ echo 0.1.41-**labs-nos-2
+
+running command: ** step tag --version=\$(cat VERSION)
+error: Have you set up a git credential helper? See https://help.github.com/articles/caching-your-github-password-in-git/
+: git output: To https://github.com/nuxeo/**labs-nos-**l-base-image.git
+ ! [rejected]        v0.1.41-**labs-nos-2 -> v0.1.41-**labs-nos-2 (already exists)
+error: failed to push some refs to 'https://github.com/nuxeo/**labs-nos-**l-base-image.git'
+hint: Updates were rejected because the tag already exists in the remote.: failed to run 'git push origin v0.1.41-**labs-nos-2' command in directory '', output: 'To https://github.com/nuxeo/**labs-nos-**l-base-image.git
+ ! [rejected]        v0.1.41-**labs-nos-2 -> v0.1.41-**labs-nos-2 (already exists)
+error: failed to push some refs to 'https://github.com/nuxeo/**labs-nos-**l-base-image.git'
+hint: Updates were rejected because the tag already exists in the remote.'
+error: failed to set the version on release pipelines: failed to run '/bin/sh -c ** step tag --version=$(cat VERSION)' command in directory '/workspace/source', output: ''
+[31m
+Pipeline failed on stage 'meta-pipeline' : container 'step-create-tekton-crds'. The execution of the pipeline has stopped.[0m
