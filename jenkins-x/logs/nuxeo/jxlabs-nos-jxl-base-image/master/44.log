@@ -1,0 +1,127 @@
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-znvvn-44[0m stage [32mrelease[0m and container [32mstep-credential-initializer-2bznn[0m
+{"level":"info","ts":1591365253.3528275,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1591365253.3534074,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-znvvn-44[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-jw6lw[0m
+{"level":"info","ts":1591365254.1737494,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1591365254.174892,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-znvvn-44[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-znvvn-44[0m stage [32mrelease[0m and container [32mstep-git-source-nuxeo-jxlabs-nos-jxl-base-image-znvvn-2bsf5[0m
+{"level":"info","ts":1591365259.6258972,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1591365259.9278245,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/nuxeo/**labs-nos-**l-base-image.git @ v0.1.41-**labs-nos-5 in path /workspace/source"}
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-znvvn-44[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:3e600d34f458a1de43efb4da306c8629a0cf875b
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mnuxeo-jxlabs-nos-jxl-base-image-znvvn-44[0m stage [32mrelease[0m and container [32mstep-build-and-push-image[0m
+E0605 13:54:22.927684      10 aws_credentials.go:77] while getting AWS credentials NoCredentialProviders: no valid providers in chain. Deprecated.
+	For verbose messaging see aws.Config.CredentialsChainVerboseErrors
+[36mINFO[0m[0001] Retrieving image manifest centos:7           
+E0605 13:54:23.158471      10 metadata.go:154] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+E0605 13:54:23.161516      10 metadata.go:166] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+[36mINFO[0m[0001] Retrieving image manifest centos:7           
+[36mINFO[0m[0001] Retrieving image manifest centos:7           
+[36mINFO[0m[0002] Retrieving image manifest centos:7           
+[36mINFO[0m[0002] Built cross stage deps: map[0:[/usr/local/git /usr/bin/make /out /usr/local/gcloud /usr/local/helm-plugins]] 
+[36mINFO[0m[0002] Retrieving image manifest centos:7           
+[36mINFO[0m[0002] Retrieving image manifest centos:7           
+[36mINFO[0m[0002] Executing 0 build triggers                   
+[36mINFO[0m[0002] Unpacking rootfs as cmd RUN mkdir /out requires it. 
+[36mINFO[0m[0007] RUN mkdir /out                               
+[36mINFO[0m[0007] Taking snapshot of full filesystem...        
+[36mINFO[0m[0009] Resolving 10746 paths                        
+[36mINFO[0m[0010] cmd: /bin/sh                                 
+[36mINFO[0m[0010] args: [-c mkdir /out]                        
+[36mINFO[0m[0010] Running: [/bin/sh -c mkdir /out]             
+[36mINFO[0m[0010] Taking snapshot of full filesystem...        
+[36mINFO[0m[0010] Resolving 10747 paths                        
+[36mINFO[0m[0011] ENV HELMFILE_VERSION 0.118.5                 
+[36mINFO[0m[0011] RUN curl --silent -LO https://github.com/roboll/helmfile/releases/download/v${HELMFILE_VERSION}/helmfile_linux_amd64 &&   mv helmfile_linux_amd64 /out/helmfile &&   chmod +x /out/helmfile 
+[36mINFO[0m[0011] cmd: /bin/sh                                 
+[36mINFO[0m[0011] args: [-c curl --silent -LO https://github.com/roboll/helmfile/releases/download/v${HELMFILE_VERSION}/helmfile_linux_amd64 &&   mv helmfile_linux_amd64 /out/helmfile &&   chmod +x /out/helmfile] 
+[36mINFO[0m[0011] Running: [/bin/sh -c curl --silent -LO https://github.com/roboll/helmfile/releases/download/v${HELMFILE_VERSION}/helmfile_linux_amd64 &&   mv helmfile_linux_amd64 /out/helmfile &&   chmod +x /out/helmfile] 
+[36mINFO[0m[0012] Taking snapshot of full filesystem...        
+[36mINFO[0m[0013] Resolving 10750 paths                        
+[36mINFO[0m[0015] ENV KUBECTL_VERSION 1.16.0                   
+[36mINFO[0m[0015] RUN curl --silent -LO  https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl &&   mv kubectl /out/kubectl &&   chmod +x /out/kubectl 
+[36mINFO[0m[0015] cmd: /bin/sh                                 
+[36mINFO[0m[0015] args: [-c curl --silent -LO  https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl &&   mv kubectl /out/kubectl &&   chmod +x /out/kubectl] 
+[36mINFO[0m[0015] Running: [/bin/sh -c curl --silent -LO  https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl &&   mv kubectl /out/kubectl &&   chmod +x /out/kubectl] 
+[36mINFO[0m[0015] Taking snapshot of full filesystem...        
+[36mINFO[0m[0016] Resolving 10751 paths                        
+[36mINFO[0m[0018] ENV HELM3_VERSION 3.2.1                      
+[36mINFO[0m[0018] RUN curl --silent -f -L https://get.helm.sh/helm-v${HELM3_VERSION}-linux-386.tar.gz | tar xzv &&   mv linux-386/helm /out/helm 
+[36mINFO[0m[0018] cmd: /bin/sh                                 
+[36mINFO[0m[0018] args: [-c curl --silent -f -L https://get.helm.sh/helm-v${HELM3_VERSION}-linux-386.tar.gz | tar xzv &&   mv linux-386/helm /out/helm] 
+[36mINFO[0m[0018] Running: [/bin/sh -c curl --silent -f -L https://get.helm.sh/helm-v${HELM3_VERSION}-linux-386.tar.gz | tar xzv &&   mv linux-386/helm /out/helm] 
+linux-386/
+linux-386/README.md
+linux-386/helm
+linux-386/LICENSE
+[36mINFO[0m[0019] Taking snapshot of full filesystem...        
+[36mINFO[0m[0019] Resolving 10755 paths                        
+[36mINFO[0m[0021] ENV HELM_PLUGINS /usr/local/helm-plugins     
+[36mINFO[0m[0021] ENV HELM_DIFF_VERSION 3.1.1                  
+[36mINFO[0m[0021] ENV HELM_GCS_VERSION 0.3.1                   
+[36mINFO[0m[0021] ENV HELM_GIT_VERSION 0.7.0                   
+[36mINFO[0m[0021] ENV HELM_X_VERSION 0.8.0                     
+[36mINFO[0m[0021] RUN yum install -y wget && yum clean all && mkdir -p ${HELM_PLUGINS} &&     XDG_DATA_HOME=${HELM_PLUGINS} /usr/local/bin/helm plugin install https://github.com/databus23/helm-diff --version ${HELM_DIFF_VERSION} &&     XDG_DATA_HOME=${HELM_PLUGINS} /usr/local/bin/helm plugin install https://github.com/aslafy-z/helm-git --version ${HELM_GIT_VERSION} &&     XDG_DATA_HOME=${HELM_PLUGINS} /usr/local/bin/helm plugin install https://github.com/hayorov/helm-gcs --version v${HELM_GCS_VERSION} &&     XDG_DATA_HOME=${HELM_PLUGINS} /usr/local/bin/helm plugin install https://github.com/mumoshu/helm-x --version v${HELM_X_VERSION} 
+[36mINFO[0m[0021] cmd: /bin/sh                                 
+[36mINFO[0m[0021] args: [-c yum install -y wget && yum clean all && mkdir -p ${HELM_PLUGINS} &&     XDG_DATA_HOME=${HELM_PLUGINS} /usr/local/bin/helm plugin install https://github.com/databus23/helm-diff --version ${HELM_DIFF_VERSION} &&     XDG_DATA_HOME=${HELM_PLUGINS} /usr/local/bin/helm plugin install https://github.com/aslafy-z/helm-git --version ${HELM_GIT_VERSION} &&     XDG_DATA_HOME=${HELM_PLUGINS} /usr/local/bin/helm plugin install https://github.com/hayorov/helm-gcs --version v${HELM_GCS_VERSION} &&     XDG_DATA_HOME=${HELM_PLUGINS} /usr/local/bin/helm plugin install https://github.com/mumoshu/helm-x --version v${HELM_X_VERSION}] 
+[36mINFO[0m[0021] Running: [/bin/sh -c yum install -y wget && yum clean all && mkdir -p ${HELM_PLUGINS} &&     XDG_DATA_HOME=${HELM_PLUGINS} /usr/local/bin/helm plugin install https://github.com/databus23/helm-diff --version ${HELM_DIFF_VERSION} &&     XDG_DATA_HOME=${HELM_PLUGINS} /usr/local/bin/helm plugin install https://github.com/aslafy-z/helm-git --version ${HELM_GIT_VERSION} &&     XDG_DATA_HOME=${HELM_PLUGINS} /usr/local/bin/helm plugin install https://github.com/hayorov/helm-gcs --version v${HELM_GCS_VERSION} &&     XDG_DATA_HOME=${HELM_PLUGINS} /usr/local/bin/helm plugin install https://github.com/mumoshu/helm-x --version v${HELM_X_VERSION}] 
+Loaded plugins: fastestmirror, ovl
+Determining fastest mirrors
+ * base: reflector.westga.edu
+ * extras: mirror.cogentco.com
+ * updates: repos-va.psychz.net
+Resolving Dependencies
+--> Running transaction check
+---> Package wget.x86_64 0:1.14-18.el7_6.1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package        Arch             Version                   Repository      Size
+================================================================================
+Installing:
+ wget           x86_64           1.14-18.el7_6.1           base           547 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 547 k
+Installed size: 2.0 M
+Downloading packages:
+warning: /var/cache/yum/x86_64/7/base/packages/wget-1.14-18.el7_6.1.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOKEY
+Public key for wget-1.14-18.el7_6.1.x86_64.rpm is not installed
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+Importing GPG key 0xF4A80EB5:
+ Userid     : "CentOS-7 Key (CentOS 7 Official Signing Key) <security@centos.org>"
+ Fingerprint: 6341 ab27 53d7 8a78 a7c2 7bb1 24c6 a8a7 f4a8 0eb5
+ Package    : centos-release-7-8.2003.0.el7.centos.x86_64 (@CentOS)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : wget-1.14-18.el7_6.1.x86_64                                  1/1 
+install-info: No such file or directory for /usr/share/info/wget.info.gz
+  Verifying  : wget-1.14-18.el7_6.1.x86_64                                  1/1 
+
+Installed:
+  wget.x86_64 0:1.14-18.el7_6.1                                                 
+
+Complete!
+Loaded plugins: fastestmirror, ovl
+Cleaning repos: base extras updates
+Cleaning up list of fastest mirrors
+/bin/sh: /usr/local/bin/helm: No such file or directory
+error building image: error building stage: failed to execute command: waiting for process to exit: exit status 127
+[31m
+Pipeline failed on stage 'release' : container 'step-build-and-push-image'. The execution of the pipeline has stopped.[0m
