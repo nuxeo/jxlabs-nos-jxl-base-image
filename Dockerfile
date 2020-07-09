@@ -93,7 +93,6 @@ RUN curl -f --silent --location https://rpm.nodesource.com/setup_${NODEJS_VERSIO
   yum install -y nodejs && yum clean all && \
   npm install -g pnpm
 
-COPY next-version.sh /usr/local/bin/jxlabs-nos-next-version.sh
 COPY --from=0 /usr/local /usr/local
 COPY --from=0 /usr/bin/make /usr/local/bin/make
 
