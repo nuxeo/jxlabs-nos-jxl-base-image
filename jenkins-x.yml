@@ -5,7 +5,7 @@ pipelineConfig:
       setVersion:
         steps:
           - name: next-version
-            command: ./next-version.sh
+            command: jx step next-version --use-git-tag-only
           - name: tag-version
             sh: jx step tag --version=\$(cat VERSION)
       pipeline:
@@ -53,4 +53,4 @@ pipelineConfig:
             steps:
               - name: build-and-push-image
                 image: gcr.io/kaniko-project/executor
-                sh: /kaniko/executor --cache=true --cache-dir=/workspace --context=/workspace/source --dockerfile=/workspace/source/Dockerfile --destination=gcr.io/build-jx-prod/jxlabs-nos/jxl-base:$VERSION --destination=gcr.io/build-jx-prod/jxlabs-nos/jxl-base:latest
+                sh: /kaniko/executor --cache=true --cache-dir=/workspace --context=/workspace/source --dockerfile=/workspace/source/Dockerfile --destination=--destination=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG/$APP_NAME:$VERSION
