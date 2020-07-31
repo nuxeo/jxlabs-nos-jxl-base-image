@@ -1,1 +1,7 @@
 buildPack: docker
+pipelineConfig:
+  pipelines:
+    release:
+      promote:
+        steps:
+        - command: jx step create pr regex --repo=https://github.com/nuxeo/nos-helmfile --version ${VERSION} --regex "^HELMFILE_VERSION = (?P<version>.*)$" --files Makefile
