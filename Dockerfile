@@ -27,7 +27,7 @@ RUN mkdir -p /usr/local/gcloud \
 ENV PATH /usr/local/gcloud/google-cloud-sdk/bin:$PATH
 
 # helmfile
-ENV HELMFILE_VERSION 0.118.5
+ENV HELMFILE_VERSION 0.132.0
 RUN curl --silent -o /usr/local/bin/helmfile -L https://github.com/roboll/helmfile/releases/download/v${HELMFILE_VERSION}/helmfile_linux_amd64 && \
   chmod +x /usr/local/bin/helmfile
 
