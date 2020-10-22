@@ -1,7 +1,87 @@
-buildPack: docker
+---
+buildPack: go-cli
 pipelineConfig:
   pipelines:
     release:
-      promote:
+      setVersion:
+        replace: true
         steps:
-        - command: jx step create pr regex --repo=https://github.com/nuxeo/nos-helmfile --version ${VERSION} --regex "^HELMFILE_VERSION = (?P<version>.*)$" --files Makefile
+          - name: git-unshallow
+            sh: git fetch --quiet --unshallow
+          - name: git-fetch-tags
+            sh: git fetch --quiet
+          - name: create-version-file
+            sh: jx step next-version --version=\$(make version)
+          - name: tag-version
+            sh: jx step tag --version=\$(cat VERSION)
+      pipeline:
+        stages:
+          - name: container
+            agent:
+              image: gcr.io/jenkinsxio/builder-go
+            environment:
+              - name: GOOGLE_APPLICATION_CREDENTIALS
+                value: /secrets/kaniko/kaniko-secret.json
+              - name: GITHUB_ACCESS_TOKEN
+                valueFrom:
+                  secretKeyRef:
+                    key: password
+                    name: knative-git-user-pass
+              - name: DOCKER_REGISTRY
+                valueFrom:
+                  configMapKeyRef:
+                    key: docker.registry
+                    name: jenkins-x-docker-registry
+              - name: DOCKER_REGISTRY_ORG
+                valueFrom:
+                  configMapKeyRef:
+                    key: docker.org
+                    name: jenkins-x-docker-registry
+            options:
+              containerOptions:
+                name: ""
+                resources:
+                  limits:
+                    cpu: "4"
+                    memory: 8Gi
+                  requests:
+                    cpu: "1"
+                    memory: 3Gi
+                volumeMounts:
+                  - mountPath: /secrets
+                    name: kaniko-secret
+                  - mountPath: /secrets/charts
+                    name: chart-sa
+              volumes:
+                - name: kaniko-secret
+                  secret:
+                    items:
+                      - key: kaniko-secret
+                        path: kaniko/kaniko-secret.json
+                    secretName: kaniko-secret
+                - name: chart-sa
+                  secret:
+                    items:
+                      - key: credentials.json
+                        path: credentials.json
+                    secretName: chart-sa
+            steps:
+              - name: build
+                image: gcr.io/kaniko-project/executor
+                sh: /kaniko/executor --cache=true --cache-dir=/workspace
+                  --context=/workspace/source --dockerfile=/workspace/source/Dockerfile
+                  --destination=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG/jxl-base-image:$VERSION
+              - name: promote-to-jxl
+                sh: >-
+                  jx step create pr regex
+                  --repo https://github.com/nuxeo/jxlabs-nos-jxl.git
+                  --version=${VERSION}
+                  --regex="^FROM gcr.io/build-jx-prod/jxlabs-nos-master/jxlabs-nos-jxl-base-image:(?P<version>.*)$"
+                  --files=Dockerfile
+              - name: promote-to-helmfile
+                sh: >-
+                  jx step create pr regex
+                  --repo=https://github.com/nuxeo/nos-helmfile
+                  --version=${VERSION}
+                  --regex="^helmfile-version := (?P<version>.*)$"
+                  --files=Makefile
