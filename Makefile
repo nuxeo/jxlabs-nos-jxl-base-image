@@ -1,3 +1,5 @@
+include make.d/version.mk
+
 clean-build:
 	rm -rf jx bdd-jx
 

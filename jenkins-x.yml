@@ -2,6 +2,17 @@ buildPack: docker
 pipelineConfig:
   pipelines:
     release:
+      setVersion:
+        replace: true
+        steps:
+        - image: gcr.io/jenkinsxio/builder-maven
+          steps:
+          - name: fetch-history
+            sh: git fetch --unshallow
+          - name: create-version-file
+            sh: jx step next-version --version=$(make version~print)
+          - name: tag-version
+            sh: jx step tag
       promote:
         steps:
         - command: jx step create pr regex --repo=https://github.com/nuxeo/nos-helmfile --version ${VERSION} --regex "^HELMFILE_VERSION = (?P<version>.*)$" --files Makefile
