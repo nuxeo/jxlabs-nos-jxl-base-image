@@ -15,4 +15,7 @@ pipelineConfig:
             sh: jx step tag
       promote:
         steps:
-        - command: jx step create pr regex --repo=https://github.com/nuxeo/nos-helmfile --version ${VERSION} --regex "^HELMFILE_VERSION = (?P<version>.*)$" --files Makefile
+        - command: jx step create pr docker --repo=https://github.com/nuxeo/jxlabs-nos-jxl --version ${VERSION} --name=JXL_BASE_IMAGE_VERSION
+          name: promote-jxl
+        - sh: jx step create pr regex --repo=https://github.com/nuxeo/nos-helmfile --version ${VERSION} --regex "^HELMFILE_VERSION = (?P<version>.*)$" --files Makefile
+          name: promote-helmfile
