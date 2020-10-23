@@ -71,17 +71,5 @@ pipelineConfig:
                 sh: /kaniko/executor --cache=true --cache-dir=/workspace
                   --context=/workspace/source --dockerfile=/workspace/source/Dockerfile
                   --destination=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG/$APP_NAME:$VERSION
-              - name: promote-to-jxl
-                sh: >-
-                  jx step create pr regex
-                  --repo https://github.com/nuxeo/jxlabs-nos-jxl.git
-                  --version=${VERSION}
-                  --regex="^FROM gcr.io/build-jx-prod/jxlabs-nos-master/jxlabs-nos-jxl-base-image:(?P<version>.*)$"
-                  --files=Dockerfile
-              - name: promote-to-helmfile
-                sh: >-
-                  jx step create pr regex
-                  --repo=https://github.com/nuxeo/nos-helmfile
-                  --version=${VERSION}
-                  --regex="^helmfile-version := (?P<version>.*)$"
-                  --files=Makefile
+              - name: promote
+                sh: make promote
