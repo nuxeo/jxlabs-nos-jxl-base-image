@@ -70,7 +70,7 @@ pipelineConfig:
                 image: gcr.io/kaniko-project/executor
                 sh: /kaniko/executor --cache=true --cache-dir=/workspace
                   --context=/workspace/source --dockerfile=/workspace/source/Dockerfile
-                  --destination=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG/jxl-base-image:$VERSION
+                  --destination=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG/$APP_NAME:$VERSION
               - name: promote-to-jxl
                 sh: >-
                   jx step create pr regex
